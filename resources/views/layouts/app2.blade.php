@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="in">
     <head>
         <meta charset="utf-8" />
         <meta
@@ -7,22 +7,29 @@
             content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>@yield('title')</title>
+        <title>
+            Dashboard - Tabler - Premium and Open Source dashboard template with
+            responsive and high quality UI.
+        </title>
         @include('layouts.styles')
     </head>
     <body>
         <div class="wrapper">
-            @include('layouts.header')
-
-            @include('layouts.menu')
+            @include('layouts.sidebar')
 
             <div class="page-wrapper">
-                @include('layouts.page_header')
+                <div class="container-xl">
+                    <div class="page-header d-print-none">
+                        <div class="row align-items-center">
+                            @yield('content-header')
+                        </div>
+                    </div>
+                </div>
 
                 <div class="page-body">
                     <div class="container-xl">
                         <div class="row row-deck row-cards">
-                            <div class="col-12">@yield('content')</div>
+                            @yield('content')
                         </div>
                     </div>
                 </div>
